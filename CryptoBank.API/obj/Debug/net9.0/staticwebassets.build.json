@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "g4VuasBaDhj1DDeJCx787RZMgnsuvh4m41UXD+eIEBg=",
+  "Source": "CryptoBank.API",
+  "BasePath": "_content/CryptoBank.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

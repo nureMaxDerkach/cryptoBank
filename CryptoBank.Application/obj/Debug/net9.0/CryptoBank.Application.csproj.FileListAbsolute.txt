@@ -1,0 +1,11 @@
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/bin/Debug/net9.0/CryptoBank.Application.deps.json
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/bin/Debug/net9.0/CryptoBank.Application.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/bin/Debug/net9.0/CryptoBank.Application.pdb
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.AssemblyInfoInputs.cache
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.AssemblyInfo.cs
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.csproj.CoreCompileInputs.cache
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/refint/CryptoBank.Application.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.pdb
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/ref/CryptoBank.Application.dll
