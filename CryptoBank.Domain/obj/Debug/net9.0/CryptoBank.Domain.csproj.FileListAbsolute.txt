@@ -22,3 +22,4 @@
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Domain/obj/Debug/net9.0/refint/CryptoBank.Domain.dll
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Domain/obj/Debug/net9.0/CryptoBank.Domain.pdb
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Domain/obj/Debug/net9.0/ref/CryptoBank.Domain.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Domain/obj/Debug/net9.0/CryptoBank.Domain.sourcelink.json

@@ -32,3 +32,4 @@
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Persistence/obj/Debug/net9.0/CryptoBank.Persistence.pdb
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Persistence/obj/Debug/net9.0/CryptoBank.Persistence.genruntimeconfig.cache
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Persistence/obj/Debug/net9.0/ref/CryptoBank.Persistence.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Persistence/obj/Debug/net9.0/CryptoBank.Persistence.sourcelink.json

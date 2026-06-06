@@ -314,3 +314,14 @@
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/obj/Debug/net9.0/CryptoBank.API.pdb
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/obj/Debug/net9.0/CryptoBank.API.genruntimeconfig.cache
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/obj/Debug/net9.0/ref/CryptoBank.API.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/CryptoBank.Application.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/CryptoBank.Contracts.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/CryptoBank.Infrastructure.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/CryptoBank.Application.pdb
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/CryptoBank.Infrastructure.pdb
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/CryptoBank.Contracts.pdb
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/obj/Debug/net9.0/CryptoBank.API.sourcelink.json
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/FluentValidation.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/FluentValidation.DependencyInjectionExtensions.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.API/bin/Debug/net9.0/BCrypt-Net-Next.dll

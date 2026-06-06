@@ -23,5 +23,7 @@ public class User : BaseEntity
 
     public long CountryId { get; set; }
 
-    public required Country Country { get; set; }
+    public Country? Country { get; set; }
+
+    public string? PasswordHash { get; set; }
 }

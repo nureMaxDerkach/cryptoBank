@@ -9,3 +9,10 @@
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/refint/CryptoBank.Application.dll
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.pdb
 /Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/ref/CryptoBank.Application.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/bin/Debug/net9.0/CryptoBank.Contracts.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/bin/Debug/net9.0/CryptoBank.Domain.dll
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/bin/Debug/net9.0/CryptoBank.Contracts.pdb
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/bin/Debug/net9.0/CryptoBank.Domain.pdb
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.csproj.AssemblyReference.cache
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBank.Application.sourcelink.json
+/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Application/obj/Debug/net9.0/CryptoBa.E6E3EC2C.Up2Date
