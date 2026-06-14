@@ -6,11 +6,11 @@ public enum CurrencyCode : byte
     EUR = 2,
     UAH = 3,
     
-    USDT = 4,
-    USDC = 5,
+    BTC = 4,
+    ETH = 5,
+    TRX = 6,
+    BNB = 7,
     
-    BTC = 6,
-    ETH = 7,
-    TRX = 8,
-    BNB = 9
+    USDT = 8,
+    USDC = 9,
 }

@@ -17,6 +17,8 @@ public class CryptoBankDbContext : DbContext
     public DbSet<Currency> Currencies { get; set; }
 
     public DbSet<ExchangeRate> ExchangeRates { get; set; }
+
+    public DbSet<Card> Cards { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

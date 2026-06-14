@@ -6,7 +6,7 @@ namespace CryptoBank.Application.Services.AuthService;
 
 public interface IAuthService
 {
-    Task<RegisterResponse> RegisterAsync(RegisterRequest request);
+    Task<AuthResponseDto> RegisterAsync(RegisterRequest request);
     
-    Task<LoginResponse> LoginAsync(LoginRequest request);
+    Task<AuthResponseDto> LoginAsync(LoginRequest request);
 }

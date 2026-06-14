@@ -1,6 +1,8 @@
 using CryptoBank.Application.Abstractions;
+using CryptoBank.Application.Services.CardService;
 using CryptoBank.Contracts.Requests;
 using CryptoBank.Contracts.Responses;
+using CryptoBank.Domain.Enums;
 using CryptoBank.Domain.Interfaces;
 using CryptoBank.Domain.Models;
 
@@ -9,29 +11,44 @@ namespace CryptoBank.Application.Services.AuthService;
 public class AuthService(
     IUserRepository userRepository, 
     IUnitOfWork unitOfWork, 
+    ICardService cardService,
     ITokenService tokenService) : IAuthService
 {
-    public async Task<RegisterResponse> RegisterAsync(RegisterRequest request)
+    public async Task<AuthResponseDto> RegisterAsync(RegisterRequest request)
     {
-        var user = new User
+        await using var transaction = await unitOfWork.BeginTransactionAsync();
+
+        try
         {
-            FirstName = request.FirstName,
-            LastName = request.LastName,
-            Email = request.Email,
-            DateOfBirth = request.DateOfBirth,
-            CountryId = request.CountryId,
-            PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
-        };
+            var user = new User
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email,
+                DateOfBirth = request.DateOfBirth,
+                CountryId = request.CountryId,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+            };
 
-        await userRepository.AddAsync(user);
-        await unitOfWork.SaveChangesAsync();
+            await userRepository.AddAsync(user);
+            await unitOfWork.SaveChangesAsync();
 
-        var token = tokenService.GenerateAccessToken(user);
+            await cardService.CreateCardAsync(user.Id, (long)GetCurrencyCodeBasedOnCountryId(request.CountryId));
+            
+            await transaction.CommitAsync();
 
-        return new RegisterResponse(token);
+            var token = tokenService.GenerateAccessToken(user);
+
+            return CreateAuthResponseDto(token, user);
+        }
+        catch
+        {
+            await transaction.RollbackAsync();
+            throw;
+        }
     }
 
-    public async Task<LoginResponse> LoginAsync(LoginRequest request)
+    public async Task<AuthResponseDto> LoginAsync(LoginRequest request)
     {
         var user = await userRepository.GetByEmailAsync(request.Email);
 
@@ -46,6 +63,20 @@ public class AuthService(
         }
         
         var token = tokenService.GenerateAccessToken(user);
-        return new LoginResponse(token);
+        
+        return CreateAuthResponseDto(token, user);
     }
+    
+    private static AuthResponseDto CreateAuthResponseDto(string token, User user)
+    {
+        return new AuthResponseDto(token, new UserDto(user.Id, user.FirstName, user.LastName, user.Email));
+    }
+
+    private static CurrencyCode GetCurrencyCodeBasedOnCountryId(long countryId) =>
+        countryId switch
+        {
+            (long)CountryCode.UKRAINE => CurrencyCode.UAH,
+            (long)CountryCode.GERMANY or (long)CountryCode.NETHERLANDS or (long)CountryCode.ESTONIA => CurrencyCode.EUR,
+            _ => CurrencyCode.USD
+        };
 }

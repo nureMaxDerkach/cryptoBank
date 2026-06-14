@@ -2,6 +2,6 @@ namespace CryptoBank.Domain.Enums;
 
 public enum CurrencyType : byte
 {
-    Fiat = 1,
-    Crypto = 2
+    FIAT = 1,
+    CRYPTO = 2
 }

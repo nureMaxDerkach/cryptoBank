@@ -26,4 +26,6 @@ public class User : BaseEntity
     public Country? Country { get; set; }
 
     public string? PasswordHash { get; set; }
+
+    public ICollection<Card> Cards { get; set; } = new List<Card>();
 }

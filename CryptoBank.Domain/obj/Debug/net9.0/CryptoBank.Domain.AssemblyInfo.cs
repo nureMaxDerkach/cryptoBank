@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoBank.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+816a7e8f5bec691793bf47fdba1e72c307ff60f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dcec0faa46fbcff447c7a700be10df8c1405a1f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoBank.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoBank.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
