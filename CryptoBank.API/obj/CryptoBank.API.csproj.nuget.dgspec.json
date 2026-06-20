@@ -201,7 +201,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Domain/CryptoBank.Domain.csproj": {
+                "projectPath": "/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Domain/CryptoBank.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

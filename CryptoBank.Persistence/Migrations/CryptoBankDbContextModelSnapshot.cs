@@ -322,6 +322,62 @@ namespace CryptoBank.Persistence.Migrations
                         });
                 });
 
+            modelBuilder.Entity("CryptoBank.Domain.Models.Transaction", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("FromAmount")
+                        .HasColumnType("decimal(38, 18)");
+
+                    b.Property<long>("FromCurrencyId")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("IsExternal")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("RecipientReference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("RecipientUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ToAmount")
+                        .HasColumnType("decimal(38, 18)");
+
+                    b.Property<long>("ToCurrencyId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("FromCurrencyId");
+
+                    b.HasIndex("RecipientUserId");
+
+                    b.HasIndex("ToCurrencyId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Transactions");
+                });
+
             modelBuilder.Entity("CryptoBank.Domain.Models.User", b =>
                 {
                     b.Property<long>("Id")
@@ -431,6 +487,40 @@ namespace CryptoBank.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("Currency");
+                });
+
+            modelBuilder.Entity("CryptoBank.Domain.Models.Transaction", b =>
+                {
+                    b.HasOne("CryptoBank.Domain.Models.Currency", "FromCurrency")
+                        .WithMany()
+                        .HasForeignKey("FromCurrencyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CryptoBank.Domain.Models.User", "RecipientUser")
+                        .WithMany()
+                        .HasForeignKey("RecipientUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("CryptoBank.Domain.Models.Currency", "ToCurrency")
+                        .WithMany()
+                        .HasForeignKey("ToCurrencyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CryptoBank.Domain.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("FromCurrency");
+
+                    b.Navigation("RecipientUser");
+
+                    b.Navigation("ToCurrency");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CryptoBank.Domain.Models.User", b =>

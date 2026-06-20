@@ -26,4 +26,11 @@ public class WalletRepository(CryptoBankDbContext dbContext) : IWalletRepository
             .Include(x => x.Currency)
             .FirstOrDefaultAsync(x => x.Id == walletId);
     }
+
+    public async Task<Wallet?> GetByAddressAsync(string address)
+    {
+        return await dbContext.Wallets
+            .Include(x => x.Currency)
+            .FirstOrDefaultAsync(x => x.Address == address);
+    }
 }

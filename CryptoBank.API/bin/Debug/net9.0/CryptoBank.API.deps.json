@@ -990,6 +990,9 @@
         }
       },
       "CryptoBank.Contracts/1.0.0": {
+        "dependencies": {
+          "CryptoBank.Domain": "1.0.0"
+        },
         "runtime": {
           "CryptoBank.Contracts.dll": {
             "assemblyVersion": "1.0.0.0",

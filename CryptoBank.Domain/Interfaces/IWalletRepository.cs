@@ -9,4 +9,6 @@ public interface IWalletRepository
     Task<List<Wallet>> GetAllBuUserIdAsync(long userId);
     
     Task<Wallet?> GetByIdAsync(long id);
+    
+    Task<Wallet?> GetByAddressAsync(string address);
 }

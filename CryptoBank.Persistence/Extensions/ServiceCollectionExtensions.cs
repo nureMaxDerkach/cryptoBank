@@ -16,6 +16,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICardRepository, CardRepository>();
         services.AddScoped<IWalletRepository, WalletRepository>();
         services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+        services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
+        services.AddScoped<ITransactionRepository, TransactionRepository>();
         
         return services;
     }

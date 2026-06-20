@@ -21,13 +21,13 @@ public class CardService(ICardRepository cardRepository, IUnitOfWork unitOfWork)
             CreatedAt = DateTime.UtcNow
         };
 
-        await cardRepository.AddCardAsync(card);
+        await cardRepository.AddAsync(card);
         await unitOfWork.SaveChangesAsync();
     }
 
     public async Task<List<CardResponseDto>> GetAllUserCardsAsync(long userId)
     {
-        var cards = await cardRepository.GetAllCardsByUserIdAsync(userId);
+        var cards = await cardRepository.GetAllByUserIdAsync(userId);
         
         return cards
             .Select(x => new CardResponseDto(x.Id, x.CurrencyId, x.CardNumber, x.Cvv, x.Balance, x.ExpiryDate))
@@ -36,11 +36,16 @@ public class CardService(ICardRepository cardRepository, IUnitOfWork unitOfWork)
 
     public async Task<CardResponseDto?> GetCardByIdAsync(long userId, long cardId)
     {
-        var card = await cardRepository.GetCardByIdAsync(userId, cardId);
+        var card = await cardRepository.GetByIdAsync(cardId);
 
         if (card is null)
         {
             return null;
+        }
+        
+        if (card.UserId != userId)
+        {
+            throw new UnauthorizedAccessException("You do not own this card");
         }
 
         return new CardResponseDto(card.Id, card.CurrencyId, card.CardNumber, card.Cvv, card.Balance, card.ExpiryDate);

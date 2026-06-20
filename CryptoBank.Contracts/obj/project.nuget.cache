@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tm+1Yg66rSE=",
+  "dgSpecHash": "8JC6/xme8tg=",
   "success": true,
   "projectFilePath": "/Users/dma/SoftwareProjects/CryptoBank/CryptoBank.Contracts/CryptoBank.Contracts.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/dma/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0/microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

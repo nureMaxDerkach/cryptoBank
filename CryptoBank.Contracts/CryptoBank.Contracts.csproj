@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CryptoBank.Domain\CryptoBank.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

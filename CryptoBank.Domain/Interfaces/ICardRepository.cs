@@ -4,9 +4,11 @@ namespace CryptoBank.Domain.Interfaces;
 
 public interface ICardRepository
 {
-    Task<Card> AddCardAsync(Card card);
+    Task<Card> AddAsync(Card card);
     
-    Task<List<Card>> GetAllCardsByUserIdAsync(long userId);
+    Task<List<Card>> GetAllByUserIdAsync(long userId);
     
-    Task<Card?> GetCardByIdAsync(long userId, long cardId);
+    Task<Card?> GetByIdAsync(long cardId);
+    
+    Task<Card?> GetByCardNumberAsync(string cardNumber);
 }
