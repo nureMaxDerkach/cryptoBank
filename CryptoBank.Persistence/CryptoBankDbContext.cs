@@ -11,14 +11,11 @@ public class CryptoBankDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; }
-
     public DbSet<Country> Countries { get; set; }
-
     public DbSet<Currency> Currencies { get; set; }
-
     public DbSet<ExchangeRate> ExchangeRates { get; set; }
-
     public DbSet<Card> Cards { get; set; }
+    public DbSet<Wallet> Wallets { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

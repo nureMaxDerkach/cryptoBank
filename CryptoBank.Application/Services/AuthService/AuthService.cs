@@ -1,5 +1,6 @@
 using CryptoBank.Application.Abstractions;
 using CryptoBank.Application.Services.CardService;
+using CryptoBank.Application.Services.WalletService;
 using CryptoBank.Contracts.Requests;
 using CryptoBank.Contracts.Responses;
 using CryptoBank.Domain.Enums;
@@ -12,7 +13,8 @@ public class AuthService(
     IUserRepository userRepository, 
     IUnitOfWork unitOfWork, 
     ICardService cardService,
-    ITokenService tokenService) : IAuthService
+    ITokenService tokenService,
+    IWalletService walletService) : IAuthService
 {
     public async Task<AuthResponseDto> RegisterAsync(RegisterRequest request)
     {
@@ -33,7 +35,9 @@ public class AuthService(
             await userRepository.AddAsync(user);
             await unitOfWork.SaveChangesAsync();
 
+            // TODO: Revise this logic
             await cardService.CreateCardAsync(user.Id, (long)GetCurrencyCodeBasedOnCountryId(request.CountryId));
+            await walletService.CreateWalletAsync(user.Id, (long)CurrencyCode.BTC);
             
             await transaction.CommitAsync();
 

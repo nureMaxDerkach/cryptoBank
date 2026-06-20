@@ -28,4 +28,6 @@ public class User : BaseEntity
     public string? PasswordHash { get; set; }
 
     public ICollection<Card> Cards { get; set; } = new List<Card>();
+
+    public ICollection<Wallet> Wallets { get; set; } = new List<Wallet>();
 }

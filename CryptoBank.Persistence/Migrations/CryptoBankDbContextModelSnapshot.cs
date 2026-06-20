@@ -366,6 +366,43 @@ namespace CryptoBank.Persistence.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("CryptoBank.Domain.Models.Wallet", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(38, 18)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("CurrencyId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Address")
+                        .IsUnique();
+
+                    b.HasIndex("CurrencyId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Wallets");
+                });
+
             modelBuilder.Entity("CryptoBank.Domain.Models.Card", b =>
                 {
                     b.HasOne("CryptoBank.Domain.Models.Currency", "Currency")
@@ -407,9 +444,30 @@ namespace CryptoBank.Persistence.Migrations
                     b.Navigation("Country");
                 });
 
+            modelBuilder.Entity("CryptoBank.Domain.Models.Wallet", b =>
+                {
+                    b.HasOne("CryptoBank.Domain.Models.Currency", "Currency")
+                        .WithMany()
+                        .HasForeignKey("CurrencyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CryptoBank.Domain.Models.User", "User")
+                        .WithMany("Wallets")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Currency");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CryptoBank.Domain.Models.User", b =>
                 {
                     b.Navigation("Cards");
+
+                    b.Navigation("Wallets");
                 });
 #pragma warning restore 612, 618
         }

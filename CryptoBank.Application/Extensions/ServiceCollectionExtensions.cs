@@ -1,5 +1,6 @@
 using CryptoBank.Application.Services.AuthService;
 using CryptoBank.Application.Services.CardService;
+using CryptoBank.Application.Services.WalletService;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +14,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<ICardService, CardService>();
+        services.AddScoped<IWalletService, WalletService>();
         
         return services;
     }
