@@ -29,7 +29,7 @@ public class Transaction : BaseEntity
 
     public User? RecipientUser { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     
     public bool IsExternal { get; set; }
 

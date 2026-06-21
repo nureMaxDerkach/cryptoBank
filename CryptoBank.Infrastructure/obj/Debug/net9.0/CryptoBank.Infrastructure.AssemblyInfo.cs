@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15f55aadb5a41785883280b90e52f908d17a8c27")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5df7f49d927a6072b5763591b36c8a04698bf25")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

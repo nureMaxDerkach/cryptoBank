@@ -16,5 +16,5 @@ public class Wallet : BaseEntity
 
     public decimal Balance { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

@@ -8,5 +8,9 @@ public interface IUserRepository
     
     Task<User?> GetByEmailAsync(string email);
     
+    Task<User?> GetByIdAsync(long id);
+    
     Task<bool> IsEmailUniqueAsync(string email);
+    
+    Task<List<User>> GetAllAsync();
 }

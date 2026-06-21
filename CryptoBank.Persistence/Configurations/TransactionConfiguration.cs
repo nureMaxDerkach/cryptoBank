@@ -10,6 +10,7 @@ public class TransactionConfiguration : IEntityTypeConfiguration<Transaction>
     {
         builder.Property(t => t.FromAmount).HasColumnType("decimal(38, 18)").IsRequired();
         builder.Property(t => t.ToAmount).HasColumnType("decimal(38, 18)").IsRequired();
+        builder.Property(x => x.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
 
         builder.HasIndex(t => t.UserId);
         builder.HasIndex(t => t.CreatedAt);

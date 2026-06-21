@@ -34,8 +34,7 @@ public class AuthService(
 
             await userRepository.AddAsync(user);
             await unitOfWork.SaveChangesAsync();
-
-            // TODO: Revise this logic
+            
             await cardService.CreateCardAsync(user.Id, (long)GetCurrencyCodeBasedOnCountryId(request.CountryId));
             await walletService.CreateWalletAsync(user.Id, (long)CurrencyCode.BTC);
             

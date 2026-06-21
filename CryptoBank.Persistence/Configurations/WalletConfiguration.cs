@@ -10,6 +10,7 @@ public class WalletConfiguration : IEntityTypeConfiguration<Wallet>
     {
         builder.Property(w => w.Address).HasMaxLength(64).IsRequired();
         builder.Property(w => w.Balance).HasColumnType("decimal(38, 18)").IsRequired();
+        builder.Property(x => x.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
 
         builder.HasIndex(w => w.Address).IsUnique();
 

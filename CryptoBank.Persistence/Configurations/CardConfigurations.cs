@@ -12,6 +12,7 @@ public class CardConfigurations : IEntityTypeConfiguration<Card>
         builder.Property(c => c.CardNumber).HasMaxLength(19).IsRequired();
         builder.Property(c => c.Cvv).HasColumnName("CVV").HasMaxLength(3).IsRequired();
         builder.Property(c => c.Balance).HasColumnType("decimal(18, 2)").IsRequired();
+        builder.Property(x => x.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
         
         builder
             .HasOne(c => c.User)
