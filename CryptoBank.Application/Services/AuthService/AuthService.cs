@@ -36,7 +36,21 @@ public class AuthService(
             await unitOfWork.SaveChangesAsync();
             
             await cardService.CreateCardAsync(user.Id, (long)GetCurrencyCodeBasedOnCountryId(request.CountryId));
-            await walletService.CreateWalletAsync(user.Id, (long)CurrencyCode.BTC);
+            
+            var cryptoCurrencies = new[]
+            {
+                CurrencyCode.BTC,
+                CurrencyCode.ETH,
+                CurrencyCode.TRX,
+                CurrencyCode.BNB,
+                CurrencyCode.USDT,
+                CurrencyCode.USDC,
+            };
+
+            foreach (var currency in cryptoCurrencies)
+            {
+                await walletService.CreateWalletAsync(user.Id, (long)currency);
+            }
             
             await transaction.CommitAsync();
 
